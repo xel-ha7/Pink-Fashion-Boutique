@@ -1,0 +1,878 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+
+{% block particle %}
+  
+<div class="{{ particle.class|e }} g-owlcarousel-layout-testimonial {% if particle.nav == 'false' %}g-owlcarousel-nav-disabled{% endif %} {{ particle.disenotestimonio }} {% if particle.posicionbotonesnav %}{{particle.posicionbotonesnav}}{% endif %}">
+
+{% if particle.tituloprincipal %}
+        <{{ particle.etiquetatitulo }} class="g-cualidades-titulo">{{ particle.tituloprincipal|raw }}</{{ particle.etiquetatitulo }}>
+{% endif %}
+
+    <div id="g-owlcarousel-{{ id }}" class="g-owlcarousel owl-carousel owl-theme">
+        {% for item in particle.items %}
+        <div class="item g-content">
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 1---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi1' %}
+            {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>                        
+                        <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+            {% endif %}
+                
+            <div class="g-owltesti-detalles">
+                {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                        {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }} | </div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+
+                 {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>
+                      {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }} 
+                    </div>
+                {% endif %}
+            </div>            
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 2---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi2' %}
+            {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+            {% endif %}                
+            <div class="g-owltesti-detalles">
+               
+                 {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>
+                     <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                     {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    </div>
+                {% endif %}
+
+                 {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+
+            </div>            
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 3---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi3' %}
+
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }} 
+                </div>
+            {% endif %}
+
+            <div class="g-owltesti-detalles">
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %} 
+
+                 {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 4---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi4' %}              
+
+             {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    </div>
+            {% endif %}
+
+            <div class="g-owltesti-detalles">
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                        <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %}  
+
+                {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+            </div>
+          
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 5---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi5' %}             
+            
+                {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>                         
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    <div class="g-owltesti-flecha"></div>
+                    <div class="g-owltesti-flecha-inner"></div>
+                </div>
+                {% endif %}
+
+
+                <div class="g-owltesti-detalles">
+                    {% if item.imagenautor %}
+                    <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                        <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                    </div>
+                    {% endif %} 
+
+                    {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+
+                </div>            
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 6---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi6' %}              
+
+             {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                </div>
+            {% endif %}
+
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}  
+
+            {% if item.nombre or item.puestotrabajo %}
+            <div class="g-owltesti-metatestimonios">
+               {%- if item.nombre -%}
+                <div class="g-owltesti-nombre" 
+                    {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                    {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                    {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                    {{- item.nombre|raw }}</div>
+                {%- endif -%}
+                {%- if item.puestotrabajo %}
+                <div class="g-owltesti-puestotrabajo"
+                 {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                    {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                    {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                    {{- item.puestotrabajo|raw -}}</div>
+                {%- endif -%}
+            </div>
+            {% endif %}          
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 7---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi7' %} 
+
+            {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>
+                     <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    </div>
+                    <div class="g-owltesti-content-flecha"><span class="g-owltesti-flecha"></span></div> 
+            {% endif %}
+
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}  
+
+            {% if item.nombre or item.puestotrabajo %}
+               <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+            {% endif %}          
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 8---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi8'  %}              
+
+            {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>
+                     <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                        <div class="g-owltesti-flecha"></div><div class="g-owltesti-flecha-inner"></div>  
+                    </div>
+            {% endif %}
+
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}  
+
+             {% if item.nombre or item.puestotrabajo %}
+               <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+            {% endif %}          
+        {% endif %}
+
+{# ------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 9---------------------------------------- #}
+{# ------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi9' %}    
+
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}
+
+             {% if item.nombre or item.puestotrabajo %}
+               <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+            {% endif %}
+
+            {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>                         
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    </div>
+                {% endif %}          
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 10---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi10' %}
+
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>                                          
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                <div class="g-owltesti-flecha"></div><div class="g-owltesti-flecha-inner"></div>
+                </div>
+            {% endif %}
+
+
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}  
+
+            {% if item.nombre or item.puestotrabajo %}
+               <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+            {% endif %}          
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 11---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+        {% if particle.disenotestimonio=='diseno-testi11' %}              
+           
+                {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>                           
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    <div class="g-owltesti-flecha"></div><div class="g-owltesti-flecha-inner"></div>
+                    </div>
+                {% endif %}
+
+
+                 <div class="g-owltesti-detalles">
+
+                    {% if item.imagenautor %}
+                    <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                        <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                    </div>
+                    {% endif %} 
+
+                     {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+                </div>
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 12---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi12' %}              
+            <div class="g-owltesti-detalles">               
+                {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+            </div> 
+
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %} 
+                                         
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    <div class="g-owltesti-flecha"></div>
+                </div>
+            {% endif %}                       
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 13---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi13' %}
+            {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                        <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                    {% if item.nombre or item.puestotrabajo %}
+                    <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                    {% endif %}
+                </div>
+            {% endif %}    
+
+
+            <div class="g-owltesti-detalles"> 
+                {% if item.contenidotesti %}
+                    <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>                         
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    <div class="g-owltesti-flecha"></div><div class="g-owltesti-flecha-inner"></div>
+                    </div>
+                {% endif %} 
+            </div>            
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 14---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi14' %}              
+            <div class="g-owltesti-detalles">
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="flex-basis:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %} 
+
+                {% if item.nombre or item.puestotrabajo %}
+                <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+                {% endif %}
+            </div>
+
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}<i class="fa fa-quote-right" aria-hidden="true"></i>  
+                    <div class="g-owltesti-flecha"></div><div class="g-owltesti-flecha-inner"></div>
+                </div>
+            {% endif %}
+                      
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 15---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi15' %}           
+            {% if item.contenidotesti %}
+            <div class="g-owltesti-contenido"  
+                    {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                            {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                            {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                    {%- endif -%}>
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %} 
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+            </div>                    
+            {% endif %}
+
+            <div class="g-owltesti-detalles">  
+                {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 16---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi16' %}             
+                {% if item.imagenautor %}
+                <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+                </div>
+                {% endif %}
+                 <div class="g-owltesti-detalles">
+                 {% if item.nombre or item.puestotrabajo %}
+                    <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                            {{- item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                </div>
+                {% endif %}           
+            
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>                            
+                {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                </div>
+            {% endif %}          
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 17---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi17' %}  
+        <div class="g-owltesti-contenedor">
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                    <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}
+            {% if item.nombre or item.puestotrabajo %}
+               <div class="g-owltesti-metatestimonios">
+                   {%- if item.nombre -%}
+                    <div class="g-owltesti-nombre" 
+                        {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                        {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                        {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                        {{- item.nombre|raw }}</div>
+                    {%- endif -%}
+                    {%- if item.puestotrabajo %}
+                    <div class="g-owltesti-puestotrabajo"
+                     {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                        {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                        {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                        {{- item.puestotrabajo|raw -}}</div>
+                    {%- endif -%}
+                </div>
+            {% endif %}
+
+            {% if item.contenidotesti %}
+                <div class="g-owltesti-contenido"  
+                {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                        {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                        {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+                {%- endif -%}>
+                 <i class="fa fa-quote-left" aria-hidden="true"></i>
+                      <div>                            
+                    {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>         
+        {% endif %}
+
+{# -------------------------------------------------------------------------------------------- #}
+{# -------------------------------------------DISENO 18---------------------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        {% if particle.disenotestimonio=='diseno-testi18' %}           
+            {% if item.imagenautor %}
+            <div class="g-owltesti-imagen" {%- if particle.anchualtuimagen -%} style="width:{{ particle.anchualtuimagen }}; height:{{ particle.anchualtuimagen }}"{%- endif -%}>
+                <div class="g-owltesti-imagen-data" style="background-image:url({{ url(item.imagenautor)|e }});" title="{{ item.nombre|e }}"></div>
+            </div>
+            {% endif %}
+
+            {% if item.contenidotesti %}
+            <div class="g-owltesti-contenido"  
+            {%- if particle.tamanotextotestimonio or particle.colortextotestimonio -%} style="
+                    {%- if particle.tamanotextotestimonio -%}font-size:{{ particle.tamanotextotestimonio }};{%- endif -%}
+                    {%- if particle.colortextotestimonio -%}color:{{ particle.colortextotestimonio }};{%- endif -%}"
+            {%- endif -%}>
+           {{ item.contenidotesti|truncate_html(particle.maxcaracteres)|raw }}
+            </div>
+            {% endif %}
+
+            <div class="g-owltesti-detalles">  
+
+                {% if item.nombre or item.puestotrabajo %}
+                   <div class="g-owltesti-metatestimonios">
+                       {%- if item.nombre -%}
+                        <div class="g-owltesti-nombre" 
+                            {%- if particle.tamanotextonombre or particle.colortextonombre -%} style="
+                            {%- if particle.tamanotextonombre -%}font-size:{{ particle.tamanotextonombre }};{%- endif -%}
+                            {%- if particle.colortextonombre -%}color:{{ particle.colortextonombre }};{%- endif -%}"{%- endif -%}>
+                            {{- item.nombre|raw }}</div>
+                        {%- endif -%}
+                        {%- if item.puestotrabajo %}
+                        <div class="g-owltesti-puestotrabajo"
+                         {%- if particle.tamanotextocargo or particle.colortextocargo -%} style="
+                            {%- if particle.tamanotextocargo -%}font-size:{{ particle.tamanotextocargo }};{%- endif -%}
+                            {%- if particle.colortextocargo -%}color:{{ particle.colortextocargo }};{%- endif -%}"{%- endif -%}>
+                             - {{ item.puestotrabajo|raw -}}</div>
+                        {%- endif -%}
+                    </div>
+                {% endif %}
+            </div>          
+        {% endif %}       
+
+{# -------------------------------------------------------------------------------------------- #}
+{# --------------------------------DISENO XX (Para futuros diseños)---------------------------- #}
+{# -------------------------------------------------------------------------------------------- #}
+
+        </div>        
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+{% block javascript_footer %}    
+    <script type="text/javascript">
+    jQuery(window).load(function() {
+        var owl{{ id|replace({'-':'_'}) }} = jQuery('#g-owlcarousel-{{ id }}');
+        owl{{ id|replace({'-':'_'}) }}.owlCarousel({ 
+            {% if particle.slideby %}
+            slideBy:{{ particle.slideby }},
+            dotsEach:{{ particle.slideby }},
+            {% endif %}
+            rtl: {% if gantry.page.direction == 'rtl' %}true{% else %}false{% endif %},
+            {% if particle.animateOut and particle.animateOut != 'default' %}
+            animateOut: '{{ particle.animateOut|default('fadeOut')|e }}',
+            {% endif %}
+            {% if particle.animateIn and particle.animateIn != 'default' %}
+            animateIn: '{{ particle.animateIn|default('fadeIn')|e }}',
+            {% endif %}
+            {% if particle.prevText and particle.nextText %}
+            navText: ['{{ particle.prevText }}', '{{ particle.nextText }}'],
+            {% else %}
+            navText: ['<i class="fa fa-chevron-left" style="color:{{ particle.colorbotonesnav }}"></i>','<i class="fa fa-chevron-right" style="color:{{ particle.colorbotonesnav }}"></i>'],
+            {% endif %}
+            {% if particle.loop %}
+            loop: true,
+            {% else %}
+            loop: false,
+            {% endif %}
+            {% if particle.autoplay %}
+            autoplay: true,
+            autoplayTimeout:{{ particle.autoplaySpeed|default('5000')}},
+            {% if particle.pauseOnHover %}
+            autoplayHoverPause: true,
+            {% else %}
+            autoplayHoverPause: false,
+            {% endif %}
+            {% else %}
+            autoplay: false,
+            {% endif %}
+            responsive:{
+                {{ particle.breakpoint1minimo }}:{
+                items:{{particle.breakpoint1numslides}},
+                nav:{{ particle.breakpoint1dots }},
+                dots:{{ particle.breakpoint1nav }},
+                },
+                {{ particle.breakpoint2minimo }}:{
+                items:{{ particle.breakpoint2numslides }},
+                nav:{{ particle.breakpoint2dots }},
+                dots:{{ particle.breakpoint2nav }},
+                },
+                {{ particle.breakpoint3minimo }}:{
+                items:{{ particle.breakpoint3numslides }},
+                nav:{{ particle.breakpoint3dots }},
+                dots:{{ particle.breakpoint3nav }},                
+                }
+            }            
+        })        
+    });
+    </script>  
+{% endblock %}

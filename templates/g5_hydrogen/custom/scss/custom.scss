@@ -1,0 +1,21 @@
+@import "dependencies";
+
+
+@import "social-pro";
+@import "ir-arriba";
+@import "owl-testimonios";
+
+
+/***** estilos generales***/
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 0 1rem 0;
+
+}
+
+#g-footer{
+    background: $accent-color-1;
+    color: #eccceb;
+}

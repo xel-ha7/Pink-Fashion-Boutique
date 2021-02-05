@@ -1,0 +1,82 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1611523371
+layout:
+  /header/: {  }
+  /navigation/:
+    -
+      - 'logo-8836 22'
+      - 'menu-2917 78'
+  /main/:
+    -
+      - system-messages-4327
+    -
+      - system-content-7173
+  /footer/:
+    -
+      - branding-7678
+    -
+      - 'position-position-1649 33.3'
+      - 'position-position-4986 33.3'
+      - 'position-position-3372 33.3'
+    -
+      - copyright-6949
+  offcanvas: {  }
+structure:
+  header:
+    attributes:
+      boxed: ''
+  navigation:
+    type: section
+    attributes:
+      boxed: ''
+  main:
+    attributes:
+      boxed: ''
+  footer:
+    attributes:
+      boxed: ''
+      class: ''
+      variations: ''
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+content:
+  logo-8836:
+    title: 'Logo / Image'
+    block:
+      variations: 'align-left nopaddingall'
+  menu-2917:
+    block:
+      variations: align-right
+  branding-7678:
+    block:
+      variations: center
+  position-position-1649:
+    title: 'Module Position'
+    attributes:
+      key: pie-pag1
+      chrome: none
+  position-position-4986:
+    title: 'Module Position'
+    attributes:
+      key: pie-pag2
+      chrome: none
+  position-position-3372:
+    title: 'Module Position'
+    attributes:
+      key: pie-pag3
+      chrome: none
+  copyright-6949:
+    attributes:
+      date:
+        start: '2014'
+      owner: 'Pink Fashion Boutique. Todos los derechos reservados'
+    block:
+      variations: center

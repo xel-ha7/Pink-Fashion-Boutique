@@ -1,0 +1,19 @@
+enabled: '1'
+css:
+  class: social
+title: 'Redes sociales'
+target: _blank
+display: icons_only
+items:
+  -
+    icon: 'fa fa-facebook-square'
+    text: 'Siguenos en facebook'
+    title: ''
+    link: 'https://www.facebook.com/'
+    name: Facebook
+  -
+    icon: 'fa fa-phone-square'
+    text: 'Siguenos en WhatsApp'
+    title: ''
+    link: 'https://www.whatsapp.com/'
+    name: Wathsapp

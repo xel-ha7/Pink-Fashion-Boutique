@@ -1,0 +1,80 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => 'C:\\xampp\\htdocs\\pinkfashion/templates/g5_hydrogen/custom/config/10/index.yaml',
+    'modified' => 1612482481,
+    'data' => [
+        'name' => '10',
+        'timestamp' => 1612482481,
+        'version' => 7,
+        'preset' => [
+            'image' => 'gantry-admin://images/layouts/home.png',
+            'name' => 'home',
+            'timestamp' => 1611523371
+        ],
+        'positions' => [
+            'animacion' => 'Animacion',
+            'vendidos-1' => 'calzado',
+            'vendidos-2acce' => 'Accesorios',
+            'vendidos-3zap' => 'Ropa',
+            'inicio-contenido' => 'informacion',
+            'formulario-registro' => 'Formulario de registro',
+            'footer' => 'Footer',
+            'pie-pag1' => 'Sobre Nosotros',
+            'pie-pag2' => 'Horarios',
+            'pie-pag3' => 'Contacto'
+        ],
+        'sections' => [
+            'header' => 'Header',
+            'navigation' => 'Navigation',
+            'showcase' => 'Showcase',
+            'feature' => 'Feature',
+            'subfeature' => 'Subfeature',
+            'main' => 'Main',
+            'footer' => 'Footer',
+            'offcanvas' => 'Offcanvas'
+        ],
+        'particles' => [
+            'logo' => [
+                'logo-4689' => 'Logo / Image'
+            ],
+            'menu' => [
+                'menu-4196' => 'Menu'
+            ],
+            'position' => [
+                'position-position-4974' => 'Animacion',
+                'position-position-2382' => 'calzado',
+                'position-position-1330' => 'Accesorios',
+                'position-position-2771' => 'Ropa',
+                'position-position-5312' => 'informacion',
+                'position-position-6039' => 'Formulario de registro',
+                'position-footer' => 'Footer',
+                'position-position-9294' => 'Sobre Nosotros',
+                'position-position-7469' => 'Horarios',
+                'position-position-2072' => 'Contacto'
+            ],
+            'custom' => [
+                'custom-4216' => 'texto'
+            ],
+            'sample' => [
+                'sample-7514' => 'servicios',
+                'sample-3380' => 'tarjetas de pago'
+            ],
+            'owl-testimonios' => [
+                'owl-testimonios-2964' => 'Owl Testimonios'
+            ],
+            'social-pro' => [
+                'social-pro-6726' => 'Redes Sociales'
+            ],
+            'copyright' => [
+                'copyright-7412' => 'Copyright'
+            ],
+            'mobile-menu' => [
+                'mobile-menu-1683' => 'Mobile Menu'
+            ]
+        ],
+        'inherit' => [
+            
+        ]
+    ]
+];
